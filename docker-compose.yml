@@ -1,0 +1,15 @@
+name: ollama
+services:
+    ollama:
+        build: .
+        devices:
+            - /dev/kfd
+            - /dev/dri
+        volumes:
+            - ollama:/root/.ollama
+        ports:
+            - 11434:11434
+        container_name: ollama
+volumes:
+    ollama:
+        name: ollama
