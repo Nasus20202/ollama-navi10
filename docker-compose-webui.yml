@@ -1,0 +1,29 @@
+name: ollama
+services:
+    ollama:
+        build: .
+        image: ollama-navi10
+        restart: 'unless-stopped'
+        devices:
+            - /dev/kfd
+            - /dev/dri
+        volumes:
+            - ollama:/root/.ollama
+        ports:
+            - 11434:11434
+        container_name: ollama
+    open-webui:
+        image: ghcr.io/open-webui/open-webui:main
+        restart: 'unless-stopped'
+        ports:
+            - 1434:8080
+        volumes:
+            - open-webui:/app/backend/data
+        environment:
+            OLLAMA_BASE_URL: http://ollama:11434
+        container_name: open-webui
+volumes:
+    ollama:
+        name: ollama
+    open-webui:
+        name: open-webui
