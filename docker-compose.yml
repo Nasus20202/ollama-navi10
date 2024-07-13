@@ -2,6 +2,7 @@ name: ollama
 services:
     ollama:
         build: .
+        image: ollama-navi10
         devices:
             - /dev/kfd
             - /dev/dri
