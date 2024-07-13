@@ -5,7 +5,7 @@ This repository contains a Dockerfile to run Ollama on a Radeon codename Navi 10
 This Dockerfile allows you to run Ollama on a Radeon 5000 series GPU. This image is based on the official Ollama ROCm image.
 
 Changes:
-- Symlink `/opt/rocm/lib/rocblas/library/TensileLibrary_lazy_gfx1010.dat` to `/opt/rocm/lib/rocblas/library/TensileLibrary_lazy_gfx1010.dat`.
+- Symlink `/opt/rocm/lib/rocblas/library/TensileLibrary_lazy_gfx1010.dat` to `/opt/rocm/lib/rocblas/library/TensileLibrary_lazy_gfx1030.dat`.
 - Environment variable `HSA_OVERRIDE_GFX_VERSION` set to `10.1.0` (Navi 10).
 
 ### Supported GPUs
